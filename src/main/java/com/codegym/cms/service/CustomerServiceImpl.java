@@ -35,4 +35,9 @@ public class CustomerServiceImpl implements CustomerService {
     public Iterable<Customer> findAllByProvince(Province province) {
         return customerRepository.findAllByProvince(province);
     }
+
+    @Override
+    public Page<Customer> findAllByFirstNameContaining(String firstName, Pageable pageable) {
+        return customerRepository.findAllByFirstNameContaining(firstName, pageable);
+    }
 }
