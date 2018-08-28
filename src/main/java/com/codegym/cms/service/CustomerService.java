@@ -2,9 +2,10 @@ package com.codegym.cms.service;
 
 import com.codegym.cms.model.Customer;
 import com.codegym.cms.model.Province;
+import org.springframework.data.domain.Page;
 
 public interface CustomerService {
-    Iterable<Customer> findAll();
+    Page<Customer> findAll();
 
     Customer findById(Long id);
 
