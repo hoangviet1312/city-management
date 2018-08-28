@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.awt.print.Pageable;
+
 @Controller
 public class CustomerController {
 
@@ -43,8 +45,8 @@ public class CustomerController {
     }
 
     @GetMapping("/customers")
-    public ModelAndView listCustomers(){
-        Iterable<Customer> customers = customerService.findAll();
+    public ModelAndView listCustomers(org.springframework.data.domain.Pageable pageable){
+        Iterable<Customer> customers = customerService.findAll(pageable);
         ModelAndView modelAndView = new ModelAndView("/list");
         modelAndView.addObject("customers", customers);
         return modelAndView;
