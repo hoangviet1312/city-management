@@ -39,9 +39,9 @@ import java.util.Properties;
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
-@EnableSpringDataWebSupport
 @ComponentScan("com.codegym.cms")
 @EnableJpaRepositories("com.codegym.cms.repository")
+@EnableSpringDataWebSupport
 public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware  {
     private ApplicationContext applicationContext;
 
@@ -131,3 +131,5 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         registry.addFormatter(new ProvinceFormatter(applicationContext.getBean(ProvinceService.class)));
     }
 }
+
+
